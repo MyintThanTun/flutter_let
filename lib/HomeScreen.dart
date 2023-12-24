@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:training_flutter_dart/Appbars/backdrop_demo.dart';
+import 'package:training_flutter_dart/Appbars/basic_appbar_demo.dart';
+import 'package:training_flutter_dart/Appbars/bottom_app_demo.dart';
+import 'package:training_flutter_dart/Appbars/convex_bottom_bar_demo.dart';
+import 'package:training_flutter_dart/Appbars/search_bar_demo.dart';
+import 'package:training_flutter_dart/Appbars/sliver_appbar_demo.dart';
 import 'package:training_flutter_dart/Layouts/container_demo.dart';
 import 'package:training_flutter_dart/Layouts/expanded_demo.dart';
 import 'package:training_flutter_dart/Layouts/fractionally_sized_box_demo.dart';
 import 'package:training_flutter_dart/Layouts/row_col_demo.dart';
 import 'package:training_flutter_dart/Layouts/stack_demo.dart';
 import 'package:training_flutter_dart/Layouts/wrap_demo.dart';
+import 'package:training_flutter_dart/Lists/datatable_demo.dart';
 import 'package:training_flutter_dart/Lists/expansion_tile_demo.dart';
 import 'package:training_flutter_dart/Lists/gird_View_demo.dart';
 import 'package:training_flutter_dart/Lists/listView_demo.dart';
@@ -49,6 +56,7 @@ class HomeScreen extends StatelessWidget {
         child: ExpansionTile(//arrow လေးနဲ့ ဖီချတာ
           shape: Border.all(color: Colors.transparent),
           title: Text(title),
+          leading: Icon(icon),
           children: subMenuItems,
         ),
       );
@@ -80,6 +88,15 @@ class HomeScreen extends StatelessWidget {
        buildSubMenuItem('4', 'ExpansionTile', const ExpansionTileDemo(), 'lib/Lists/expansion_tile_demo.dart'),
        buildSubMenuItem('5', 'Swipe to Dismiss', const SwipeDemo(), 'lib/Lists/swipe_demo.dart'),
        buildSubMenuItem('6', 'Reorderable List Demo', const ReorderableListDemo(), 'lib/Lists/reorderable_list_demo.dart'),
+       buildSubMenuItem('7', 'DataTable', const DataTableDemo(), 'lib/Lists/datatable_demo.dart'),
+    ];
+    List<Widget> appbarItems =[
+      buildSubMenuItem('1', 'Basic AppBar', const BasicAppBarDemo(), 'lib/Appbars/basic_appbar_demo.dart'),
+      buildSubMenuItem('2', 'Bottom AppBar', const BottomAppBarDemo(), 'lib/Appbars/bottom_appbar_demo.dart'),
+      buildSubMenuItem('3', 'Sliver AppBar', const SliverAppBarDemo(), 'lib/Appbars/sliver_appbar_demo.dart'),
+      buildSubMenuItem('4', 'BackDrop Demo', const BackDropDemo(), 'lib/Appbars/backdrop_demo.dart'),
+      buildSubMenuItem('5', 'Convex Bottom Bar', const ConvexBottomBarDemo(), 'lib/Appbars/convex_bottom_bar_demo.dart'),
+      buildSubMenuItem('6', 'Search Bar Demo', const SearchBarDemo(), 'lib/Appbars/search_bar_demo.dart'),
     ];
     return Scaffold(
       appBar: AppBar(
@@ -96,6 +113,7 @@ class HomeScreen extends StatelessWidget {
               buildMenuItem(Icons.widgets, 'Widgets', widgetItems),
               buildMenuItem(Icons.dashboard, "Layouts", layoutItems),
               buildMenuItem(Icons.list, 'Lists', listItems),
+              buildMenuItem(Icons.apps_outlined, 'AppBars', appbarItems),
            ],
           ),
         ),
